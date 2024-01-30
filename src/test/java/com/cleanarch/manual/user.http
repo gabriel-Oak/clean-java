@@ -1,0 +1,12 @@
+@HOSTAPI=http://localhost:8080
+
+################# CREATE_USER ###########################
+POST {{HOSTAPI}}/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"João Quem",
+    "email":"joao@gmail.com",
+    "password":"123456"
+}
+#########################################################
