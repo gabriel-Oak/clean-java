@@ -1,6 +1,6 @@
 @HOSTAPI=http://localhost:8080
 
-################# CREATE_USER ###########################
+###################### CREATE_USER ######################
 POST {{HOSTAPI}}/user HTTP/1.1
 Content-Type: application/json
 
