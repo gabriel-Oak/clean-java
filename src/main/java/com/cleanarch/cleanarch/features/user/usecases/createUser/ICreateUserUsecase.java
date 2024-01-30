@@ -1,8 +1,8 @@
 package com.cleanarch.cleanarch.features.user.usecases.createUser;
 
-import com.cleanarch.cleanarch.errors.BaseError;
 import com.cleanarch.cleanarch.features.user.dtos.CreateUser;
 import com.cleanarch.cleanarch.features.user.dtos.ReturnUser;
+import com.cleanarch.cleanarch.utils.errors.BaseError;
 
 import io.jbock.util.Either;
 

@@ -2,11 +2,11 @@ package com.cleanarch.cleanarch.features.user.datasources.userInternalDatasource
 
 import java.util.Optional;
 
-import com.cleanarch.cleanarch.errors.DatasourceError;
 import com.cleanarch.cleanarch.features.user.datasources.userInternalDatasource.errors.UserInternalDatasourceNotFoundError;
 import com.cleanarch.cleanarch.features.user.dtos.ReturnUser;
 import com.cleanarch.cleanarch.features.user.entities.User;
 import com.cleanarch.cleanarch.features.user.repositories.UserRepository;
+import com.cleanarch.cleanarch.utils.errors.DatasourceError;
 
 import io.jbock.util.Either;
 import lombok.AllArgsConstructor;

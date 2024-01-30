@@ -1,8 +1,8 @@
 package com.cleanarch.cleanarch.features.user.datasources.userInternalDatasource;
 
-import com.cleanarch.cleanarch.errors.DatasourceError;
 import com.cleanarch.cleanarch.features.user.dtos.ReturnUser;
 import com.cleanarch.cleanarch.features.user.entities.User;
+import com.cleanarch.cleanarch.utils.errors.DatasourceError;
 
 import io.jbock.util.Either;
 

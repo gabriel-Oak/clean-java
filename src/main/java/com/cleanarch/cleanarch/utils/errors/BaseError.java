@@ -1,4 +1,4 @@
-package com.cleanarch.cleanarch.errors;
+package com.cleanarch.cleanarch.utils.errors;
 
 public class BaseError extends Exception {
   public BaseError(String message) {

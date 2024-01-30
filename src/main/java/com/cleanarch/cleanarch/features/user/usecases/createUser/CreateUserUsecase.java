@@ -2,13 +2,13 @@ package com.cleanarch.cleanarch.features.user.usecases.createUser;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.cleanarch.cleanarch.errors.BaseError;
-import com.cleanarch.cleanarch.errors.DatasourceError;
-import com.cleanarch.cleanarch.errors.InvalidPayloadError;
 import com.cleanarch.cleanarch.features.user.datasources.userInternalDatasource.IUserInternalDatasource;
 import com.cleanarch.cleanarch.features.user.dtos.CreateUser;
 import com.cleanarch.cleanarch.features.user.dtos.ReturnUser;
 import com.cleanarch.cleanarch.features.user.entities.User;
+import com.cleanarch.cleanarch.utils.errors.BaseError;
+import com.cleanarch.cleanarch.utils.errors.DatasourceError;
+import com.cleanarch.cleanarch.utils.errors.InvalidPayloadError;
 
 import io.jbock.util.Either;
 import lombok.AllArgsConstructor;
@@ -20,14 +20,14 @@ public class CreateUserUsecase implements ICreateUserUsecase {
 
   @Override
   public Either<BaseError, ReturnUser> execute(CreateUser payload) {
-    if (payload.name() == null || payload.name().length() < 2)
-      return Either.left(new InvalidPayloadError("Nome não informado"));
+    // if (payload.name() == null || payload.name().length() < 2)
+    //   return Either.left(new InvalidPayloadError("Nome não informado"));
 
-    if (payload.email() == null || payload.email().length() < 2)
-      return Either.left(new InvalidPayloadError("Email não informado"));
+    // if (payload.email() == null || payload.email().length() < 2)
+    //   return Either.left(new InvalidPayloadError("Email não informado"));
 
-    if (payload.password() == null || payload.password().length() < 2)
-      return Either.left(new InvalidPayloadError("Senha não informada"));
+    // if (payload.password() == null || payload.password().length() < 2)
+    //   return Either.left(new InvalidPayloadError("Senha não informada"));
 
     final Either<DatasourceError, ReturnUser> userResult = userDatasource
         .findUserByEmail(payload.email());

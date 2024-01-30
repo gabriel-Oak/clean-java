@@ -1,6 +1,6 @@
 package com.cleanarch.cleanarch.features.user.datasources.userInternalDatasource.errors;
 
-import com.cleanarch.cleanarch.errors.DatasourceError;
+import com.cleanarch.cleanarch.utils.errors.DatasourceError;
 
 public class UserInternalDatasourceNotFoundError extends DatasourceError {
   public UserInternalDatasourceNotFoundError() {
