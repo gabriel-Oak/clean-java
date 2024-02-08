@@ -40,4 +40,15 @@ public class UserInternalDatasource implements IUserInternalDatasource {
     }
   }
 
+  @Override
+  public Either<DatasourceError, User> loadUserByEmail(String email) {
+    try {
+      final Optional<User> user = userRepository.findUserByEmail(email);
+      return user.isPresent()
+          ? Either.right(user.get())
+          : Either.left(new UserInternalDatasourceNotFoundError());
+    } catch (Exception e) {
+      return Either.left(new DatasourceError(e.getMessage()));
+    }
+  }
 }

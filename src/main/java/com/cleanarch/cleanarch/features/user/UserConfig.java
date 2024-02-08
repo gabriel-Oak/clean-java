@@ -2,6 +2,7 @@ package com.cleanarch.cleanarch.features.user;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -10,6 +11,7 @@ import com.cleanarch.cleanarch.features.user.datasources.userInternalDatasource.
 import com.cleanarch.cleanarch.features.user.repositories.UserRepository;
 import com.cleanarch.cleanarch.features.user.usecases.createUser.CreateUserUsecase;
 import com.cleanarch.cleanarch.features.user.usecases.createUser.ICreateUserUsecase;
+import com.cleanarch.cleanarch.features.user.usecases.loadUser.LoadUserUsecase;
 
 @Configuration
 public class UserConfig {
@@ -28,6 +30,11 @@ public class UserConfig {
       IUserInternalDatasource datasource,
       PasswordEncoder encoder) {
     return new CreateUserUsecase(datasource, encoder);
+  }
+
+  @Bean
+  UserDetailsService userDetailsService(IUserInternalDatasource datasource) {
+    return new LoadUserUsecase(datasource);
   }
 
   @Bean
