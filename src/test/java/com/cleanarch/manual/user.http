@@ -10,3 +10,24 @@ Content-Type: application/json
     "password":"123456"
 }
 #########################################################
+
+###################### AUTH_USER ########################
+POST {{HOSTAPI}}/user/auth HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"joao@gmail.com",
+    "password":"123456"
+}
+#########################################################
+
+###################### UPDATE_USER ######################
+PUT {{HOSTAPI}}/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"João Quem",
+    "email":"joao@gmail.com",
+    "password":"123456"
+}
+#########################################################

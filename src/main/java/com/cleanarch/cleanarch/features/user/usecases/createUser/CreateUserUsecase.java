@@ -20,15 +20,6 @@ public class CreateUserUsecase implements ICreateUserUsecase {
 
   @Override
   public Either<BaseError, ReturnUser> execute(CreateUser payload) {
-    // if (payload.name() == null || payload.name().length() < 2)
-    //   return Either.left(new InvalidPayloadError("Nome não informado"));
-
-    // if (payload.email() == null || payload.email().length() < 2)
-    //   return Either.left(new InvalidPayloadError("Email não informado"));
-
-    // if (payload.password() == null || payload.password().length() < 2)
-    //   return Either.left(new InvalidPayloadError("Senha não informada"));
-
     final Either<DatasourceError, ReturnUser> userResult = userDatasource
         .findUserByEmail(payload.email());
     if (userResult.isRight())
